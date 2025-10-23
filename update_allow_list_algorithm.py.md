@@ -12,7 +12,7 @@ For the first part of the algorithm, I opened the "allow\_list.txt" file. First,
 
 Then, I used a with statement to open the file:
 
-![Screenshot of Python code that uses a with statement to open the file][image2] 
+![Screenshot of Python code that uses a with statement to open the file](https://github.com/dondex001/automated-ip-access-control/blob/main/screenshots/with2.png) 
 
 In my algorithm, the `with` statement is used with the `.open()` function in **read mode** to open the allow list file for the purpose of reading it. The purpose of opening the file is to allow me to access the IP addresses stored in the allow list file. The `with` keyword will help manage the resources by closing the file after exiting the `with` statement. In the code `with open(import_file, "r") as file:`, the `open()` function has two parameters. The first identifies the file to import, and the second indicates what I want to do with the file. In this case, `"r"` indicates that I want to read it. The code also uses the `as` keyword to assign a variable named `file`; `file` stores the output of the `.open()` function while I work within the `with` statement.
 
@@ -20,7 +20,7 @@ In my algorithm, the `with` statement is used with the `.open()` function in **r
 
 In order to read the file contents, I used the .read() method to convert it into the string.
 
-![Screenshot of Python code that includes the .read() method][image3]
+![Screenshot of Python code that includes the .read() method](https://github.com/dondex001/automated-ip-access-control/blob/main/screenshots/read3.png)
 
 When using an `.open()` function that includes the argument `"r"` for “read,” I can call the `.read()` function in the body of the `with` statement. The `.read()` method converts the file into a string and allows me to read it. I applied the `.read()` method to the `file` variable identified in the `with` statement. Then, I assigned the string output of this method to the variable `ip_addresses`.
 
@@ -30,7 +30,7 @@ In summary, this code reads the contents of the `"allow_list.txt"` file into a s
 
 In order to remove individual IP addresses from the allow list, I needed it to be in list format. Therefore, I next used the .split() method to convert the ip\_addresses string into a list:
 
-![Screenshot of Python code that includes the .split() method][image4]
+![Screenshot of Python code that includes the .split() method](https://github.com/dondex001/automated-ip-access-control/blob/main/screenshots/split4.png)
 
 The `.split()` function is called by appending it to a string variable. It works by converting the contents of a string into a list. The purpose of splitting `ip_addresses` into a list is to make it easier to remove IP addresses from the allow list. By default, the `.split()` function splits the text by whitespace into list elements. In this algorithm, the `.split()` function takes the data stored in the variable `ip_addresses`, which is a string of IP addresses that are each separated by whitespace, and converts this string into a list of IP addresses. To store this list, I reassigned it back to the variable `ip_addresses`.
 
@@ -38,7 +38,7 @@ The `.split()` function is called by appending it to a string variable. It works
 
 A key part of my algorithm involves iterating through the IP addresses that are elements in the remove\_list. To do this, I incorporated a for loop:
 
-![Screenshot of Python code that includes the for loop header][image5]
+![Screenshot of Python code that includes the for loop header](https://github.com/dondex001/automated-ip-access-control/blob/main/screenshots/remove_list5.png)
 
 The `for` loop in Python repeats code for a specified sequence. The overall purpose of the `for` loop in a Python algorithm like this is to apply specific code statements to all elements in a sequence. The `for` keyword starts the `for` loop. It is followed by the loop variable `element` and the keyword `in`. The keyword `in` indicates that the loop should iterate through the sequence `ip_addresses` and assign each value to the loop variable `element`.
 
@@ -46,7 +46,7 @@ The `for` loop in Python repeats code for a specified sequence. The overall purp
 
 My algorithm requires removing any IP address from the allow list, `ip_addresses`, that is also contained in `remove_list`. Because there were no duplicates in `ip_addresses`, I was able to use the following code to do this:
 
-![Screenshot of Python code that incorporates a conditional and the .remove() method into the body of the for loop][image6]
+![Screenshot of Python code that incorporates a conditional and the .remove() method into the body of the for loop](https://github.com/dondex001/automated-ip-access-control/blob/main/screenshots/ip_addresses6.png)
 
 First, within my `for` loop, I created a conditional that evaluated whether or not the loop variable `element` was found in the `ip_addresses` list. I did this because applying `.remove()` to elements that were not found in `ip_addresses` would result in an error.
 
@@ -56,13 +56,13 @@ Then, within that conditional, I applied `.remove()` to `ip_addresses`. I passed
 
 As a final step in my algorithm, I needed to update the allow list file with the revised list of IP addresses. To do so, I first needed to convert the list back into a string. I used the `.join()` method for this:
 
-![Screenshot of Python code that includes the .join() method][image7]
+![Screenshot of Python code that includes the .join() method](https://github.com/dondex001/automated-ip-access-control/blob/main/screenshots/join7.png)
 
 The `.join()` method combines all items in an iterable into a string. The `.join()` method is applied to a string containing characters that will separate the elements in the iterable once joined into a string. In this algorithm, I used the `.join()` method to create a string from the list `ip_addresses` so that I could pass it in as an argument to the `.write()` method when writing to the file `"allow_list.txt"`. I used the string `"\n"` as the separator to instruct Python to place each element on a new line.
 
 Then, I used another `with` statement and the `.write()` method to update the file:
 
-![Screenshot of Python code that includes a with statement and the .write() method][image8]
+![Screenshot of Python code that includes a with statement and the .write() method](https://github.com/dondex001/automated-ip-access-control/blob/main/screenshots/write8.png)
 
 This time, I used a second argument of `"w"` with the `open()` function in my `with` statement. This argument indicates that I want to open a file to write over its contents. When using this argument `"w"`, I can call the `.write()` function in the body of the `with` statement. The `.write()` function writes string data to a specified file and replaces any existing file content.
 
