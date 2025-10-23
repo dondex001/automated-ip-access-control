@@ -6,7 +6,7 @@ At my organization, access to restricted content is managed using an allow list 
 
 ## Open the file that contains the allow list
 
-## For the first part of the algorithm, I opened the "allow\_list.txt" file. First, I assigned this file name as a string to the import\_file variable:
+For the first part of the algorithm, I opened the "allow\_list.txt" file. First, I assigned this file name as a string to the import\_file variable:
 
 ![Screenshot of Python code that assigns "allow\_list.txt" to the import\_file variable][image1]
 
