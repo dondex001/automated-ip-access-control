@@ -8,7 +8,7 @@ At my organization, access to restricted content is managed using an allow list 
 
 For the first part of the algorithm, I opened the "allow\_list.txt" file. First, I assigned this file name as a string to the import\_file variable:
 
-![Screenshot of Python code that assigns "allow\_list.txt" to the import\_file variable][image1]
+![Screenshot of Python code that assigns "allow\_list.txt" to the import\_file variable][https://github.com/dondex001/automated-ip-access-control/blob/main/screenshots/import_file1.png]
 
 Then, I used a with statement to open the file:
 
